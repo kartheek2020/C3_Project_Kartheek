@@ -75,5 +75,14 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+    public int getOrderValue(){
+        List<Item> items = getMenu();
+        int price=0;
+        for(Item i : items){
+            price = price + i.getPrice();
+        }
+        return price;
+
+    }
 
 }
