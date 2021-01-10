@@ -64,12 +64,5 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
-     @Test
-    public void searching_for_existing_item_should_return_order_value(){
-         Item i1 = restaurant.findItemByName("Sweet corn soup");
-        Item i2 = restaurant.findItemByName("Vegetable lasagne");
 
-        int orderValue = i1.getPrice() + i2.getPrice();
-        assertEquals(390,orderValue);
-    }
 }
