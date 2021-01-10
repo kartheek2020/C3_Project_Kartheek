@@ -57,4 +57,21 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void searching_for_existing_item_should_return_order_value(){
+        Item i1 = restaurant.findItemByName("Sweet corn soup");
+        Item i2 = restaurant.findItemByName("Vegetable lasagne");
+
+        int orderValue = i1.getPrice() + i2.getPrice();
+        assertEquals(388,orderValue);
+    }
+
+    @Test
+    public void searching_for_existing_item_should_return_wrong_order_value(){
+        Item i1 = restaurant.findItemByName("Sweet corn soup");
+        Item i2 = restaurant.findItemByName("Vegetable lasagne");
+
+        int orderValue = i1.getPrice() + i2.getPrice();
+        assertEquals(398,orderValue);
+    }
 }
